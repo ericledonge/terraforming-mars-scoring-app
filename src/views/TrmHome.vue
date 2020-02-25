@@ -1,6 +1,5 @@
 <template>
-    <trm-scoring-form />
-  </div>
+  <trm-scoring-form />
 </template>
 
 <script>
@@ -9,7 +8,7 @@ import TrmScoringForm from '@/components/TrmScoringForm.vue';
 export default {
   name: 'TrmHome',
   components: {
-    TrmScoringForm,
+    TrmScoringForm
   }
 };
 </script>

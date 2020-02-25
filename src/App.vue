@@ -1,9 +1,11 @@
 <template>
   <v-app>
     <trm-header />
-    <v-container>
-      <router-view :key="$route.fullPath" />
-    </v-container>
+    <v-content>
+      <v-container>
+        <router-view :key="$route.fullPath" />
+      </v-container>
+    </v-content>
     <trm-footer />
   </v-app>
 </template>
