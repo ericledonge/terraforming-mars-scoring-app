@@ -4,7 +4,13 @@
       Enter your scoring points
     </v-card-title>
     <v-card-text>
-      <v-form>
+      <v-form data-test="form">
+        <v-select
+          :items="corporations"
+          label="Corporation name"
+          data-test="corporation-name"
+          outlined
+        ></v-select>
         <v-text-field
           v-model="tr"
           type="number"
@@ -53,11 +59,12 @@ export default {
   name: 'TrmScoringForm',
   data() {
     return {
-      tr: null,
-      awards: null,
-      milestones: null,
-      forests: null,
-      cities: null
+      corporations: ['Thorgate', 'Ecoline'],
+      tr: '',
+      awards: '',
+      milestones: '',
+      forests: '',
+      cities: ''
     };
   },
   computed: {
