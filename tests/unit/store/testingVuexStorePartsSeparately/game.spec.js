@@ -19,17 +19,6 @@ let newGame = {
 };
 
 describe('Game Module', () => {
-  describe('State', () => {
-    describe('Given a new game', () => {
-      beforeEach(() => {
-        state = newGame;
-      });
-      it('should return a totalScore of 0', () => {
-        expect(game.state.totalScore).toEqual(0);
-      });
-    });
-  });
-
   describe('Getters', () => {
     describe('totalScore', () => {
       beforeEach(() => {

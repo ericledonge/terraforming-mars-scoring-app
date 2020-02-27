@@ -1,14 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-import game from '@/store/modules/game.js';
+import storeConfig from '@/store/storeConfig.js';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {},
-  mutations: {},
-  actions: {},
-  modules: {
-    game
-  }
-});
+export default new Vuex.Store(storeConfig);

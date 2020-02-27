@@ -11,10 +11,10 @@ const state = {
 const getters = {
   totalScore: state =>
     parseInt(state.tr) +
-    parseInt(state.awards) +
-    parseInt(state.milestones) +
-    parseInt(state.forests) +
-    parseInt(state.cities)
+      parseInt(state.awards) +
+      parseInt(state.milestones) +
+      parseInt(state.forests) +
+      parseInt(state.cities) || 0
 };
 
 const mutations = {

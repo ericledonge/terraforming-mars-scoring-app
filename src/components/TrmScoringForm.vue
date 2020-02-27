@@ -6,7 +6,7 @@
     <v-card-text>
       <v-form data-test="form">
         <v-select
-          :items="corporations"
+          :items="corporationsList"
           label="Corporation name"
           data-test="corporation-name"
           outlined
@@ -55,11 +55,12 @@
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
   name: 'TrmScoringForm',
   data() {
     return {
-      corporations: ['Thorgate', 'Ecoline'],
       tr: '',
       awards: '',
       milestones: '',
@@ -68,6 +69,7 @@ export default {
     };
   },
   computed: {
+    ...mapGetters(['corporationsList']),
     totalScore() {
       return (
         parseInt(this.tr) +
