@@ -1,14 +1,20 @@
 const state = {
   corporationName: '',
-  tr: 0,
-  awards: 0,
-  milestones: 0,
-  forests: 0,
-  cities: 0,
-  totalScore: 0
+  tr: '',
+  awards: '',
+  milestones: '',
+  forests: '',
+  cities: '',
+  totalScore: ''
 };
 
 const getters = {
+  corporationName: state => state.corporationName,
+  tr: state => state.tr,
+  awards: state => state.awards,
+  milestones: state => state.milestones,
+  forests: state => state.forests,
+  cities: state => state.cities,
   totalScore: state =>
     parseInt(state.tr) +
       parseInt(state.awards) +

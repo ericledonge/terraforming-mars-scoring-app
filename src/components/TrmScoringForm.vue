@@ -7,40 +7,46 @@
       <v-form data-test="form">
         <v-select
           :items="corporationsList"
+          @change="setCorporationName"
           label="Corporation name"
           data-test="corporation-name"
           outlined
         ></v-select>
         <v-text-field
-          v-model="tr"
+          :value="tr"
+          @input="setTr"
           type="number"
           label="TR"
           data-test="tr-input"
           outlined
         ></v-text-field>
         <v-text-field
-          v-model="awards"
+          :value="awards"
+          @input="setAwards"
           type="number"
           label="Awards"
           data-test="awards-input"
           outlined
         ></v-text-field>
         <v-text-field
-          v-model="milestones"
+          :value="milestones"
+          @input="setMilestones()"
           type="number"
           label="Milestones"
           data-test="milestones-input"
           outlined
         ></v-text-field>
         <v-text-field
-          v-model="forests"
+          :value="forests"
+          @input="setForests"
           type="number"
           label="Forests"
           data-test="forests-input"
           outlined
         ></v-text-field>
         <v-text-field
-          v-model="cities"
+          :value="cities"
+          @input="setCities"
           type="number"
           label="Cities"
           data-test="cities-input"
@@ -55,30 +61,30 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters, mapActions } from 'vuex';
 
 export default {
   name: 'TrmScoringForm',
-  data() {
-    return {
-      tr: '',
-      awards: '',
-      milestones: '',
-      forests: '',
-      cities: ''
-    };
-  },
   computed: {
     ...mapGetters(['corporationsList']),
-    totalScore() {
-      return (
-        parseInt(this.tr) +
-        parseInt(this.awards) +
-        parseInt(this.milestones) +
-        parseInt(this.forests) +
-        parseInt(this.cities)
-      );
-    }
+    ...mapGetters('game', [
+      'tr',
+      'awards',
+      'milestones',
+      'forests',
+      'cities',
+      'totalScore'
+    ])
+  },
+  methods: {
+    ...mapActions('game', [
+      'setCorporationName',
+      'setTr',
+      'setAwards',
+      'setMilestones',
+      'setForests',
+      'setCities'
+    ])
   }
 };
 </script>
